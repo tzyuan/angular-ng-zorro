@@ -1,0 +1,34 @@
+<!--
+ * @Author: 曹雪原
+ * @since: 2019-05-30 16:57:40
+ * @lastTime: 2019-11-25 16:40:40
+ * @LastAuthor: 曹雪原
+ * @文件相对于项目的路径: /ngadmin_v2/src/app/layout/default/header/header.component.html
+ * @message: 
+ -->
+<div class="ice-layout-header ice-layout-header-normal iceDesignLayoutHeader">
+    <div class="logo-box" [ngClass]="{'is-collapsed': layout.isCollapsed}">
+        <div class="logo">
+        </div>
+        <div class="collapsed-box" (click)="sidebarCollapsed()">
+            <i nz-icon nzType="menu" nzTheme="outline"></i>
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+    <div class="iceDesignLayoutHeaderMenu">
+        <div class="iceDesignHeaderUserpannel" nz-dropdown [nzDropdownMenu]="menu">
+            <div class="userProfile"><span class="userName">{{department}}-{{name}}</span><br><span
+                    class="userDepartment">{{roleName}}</span></div>
+            <i nz-icon nzType="down" nzTheme="outline" class="iconDown"></i>
+        </div>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu nzSelectable>
+                <li nz-menu-item (click)="logout()"><i nz-icon nzType="logout" nzTheme="outline"></i>退出
+                </li>
+            </ul>
+        </nz-dropdown-menu>
+    </div>
+</div>
